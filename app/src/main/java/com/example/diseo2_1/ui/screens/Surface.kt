@@ -5,12 +5,16 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.diseo2_1.ui.sections.SeccionBotones
 import com.example.diseo2_1.ui.sections.SeccionResumen
+import com.example.diseo2_1.ui.sections.SeccionResumenTareas
 import com.example.diseo2_1.ui.sections.SeccionTablero
 import com.example.diseo2_1.ui.sections.SeccionTarea
 
@@ -23,6 +27,7 @@ fun Contendor() {
             modifier = Modifier
                 .fillMaxSize()
                 .padding(16.dp)
+                .verticalScroll(rememberScrollState())
         ) {
             SeccionTarea()
 
@@ -35,6 +40,15 @@ fun Contendor() {
             SeccionResumen()
 
             Spacer(modifier = Modifier.height(16.dp))
+
+            SeccionResumenTareas()
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            SeccionBotones()
+
+
+
 
         }
     }
